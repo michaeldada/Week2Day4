@@ -64,10 +64,11 @@
           <ul id="ex-methods">
 
           </ul>
-          <p>Want to know how I did this? Look at our code below:</p>
+          <p>Want to know how I did this? That big fat array is everything that we wanted to appear as a string. We used a .forEach() method to append each value in the array in our un ordered list with an id = "ex-methods"</p>
           <pre>
             $(document).ready(function() {
               $("button#example").click(function() {
+
                 var methods = ['&lt;li&gt;pop(): remove the last element&lt;/li&gt;', '&lt;li&gt;push(): add an element to the end&lt;/li&gt;', '&lt;li&gt;concat(): combine with another array&lt;/li&gt;', '&lt;li&gt;reverse(): reverse the order of the array&lt;/li&gt;'];
 
                 methods.forEach(function(method){
