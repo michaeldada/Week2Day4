@@ -5,7 +5,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.12.0.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts-arrays.js"></script>
     <title>Glorius Wiki Pages</title>
   </head>
 
@@ -51,7 +51,32 @@
 
         </div><!--col-sm-3-->
         <div class="col-sm-9">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3>Arrays</h3>
+          <p>JavaScript arrays are used to store multiple values in a single variable. They can have just about anything as elements. Strings, numbers, booleans, more arrays, variables, and more(?). </p>
+          <pre>
+            var myLetters = ["a", "b", "c", "d"];
+            var myNumbers = [1, 2, 3, 9];
+          </pre>
+
+          <p>Press the button to see an array of strings appear. This button will show you some AWESOME array methods.</p>
+          <button id="example"type="submit" class="btn btn-sm btn-primary">Click Here</button>
+
+          <ul id="ex-methods">
+
+          </ul>
+          <p>Want to know how I did this? Look at our code below:</p>
+          <pre>
+            $(document).ready(function() {
+              $("button#example").click(function() {
+                var methods = ['&lt;li&gt;pop(): remove the last element&lt;/li&gt;', '&lt;li&gt;push(): add an element to the end&lt;/li&gt;', '&lt;li&gt;concat(): combine with another array&lt;/li&gt;', '&lt;li&gt;reverse(): reverse the order of the array&lt;/li&gt;'];
+
+                methods.forEach(function(method){
+                  $("#ex-methods").append(method);
+                });
+              });
+            });
+          </pre>
+
         </div>
       </div><!--row-->
     </div><!--container-->

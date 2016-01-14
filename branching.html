@@ -5,7 +5,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.12.0.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts-branching.js"></script>
     <title>Glorius Wiki Pages</title>
   </head>
 
@@ -51,7 +51,53 @@
 
         </div><!--col-sm-3-->
         <div class="col-sm-9">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3>JQuery Branching</h3>
+          <p>Very often when you write code, you want to perform different actions for different decisions. You can use conditional statements in your code to do this.In JavaScript we have the following conditional statements:</p>
+            <ul>
+              <li>Use if to specify a block of code to be executed, if a specified condition is <strong>true</strong></li>
+              <li>Use else to specify a block of code to be executed, if the same condition is <strong>false</strong></li>
+              <li>Use <strong>else if</strong> to specify a new condition to test, if the first condition is false</li>
+            </ul>
+          <hr>
+          <p>Click the button below and enter your age</p>
+          <button id="example"type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <br>
+          <div class="show21">
+            <p>
+              You are an adult.
+            </p>
+          </div>
+          <div class="show20">
+            <p>
+              You are a baby.
+            </p>
+          </div>
+          <hr>
+          <p>
+            How does this work? When the button is pressed, the user is prompted with a question from Master Computer. Master Computer determines whether or not you are a baby or an adult. If you are 21 or over, then you are an adult. <strong>Else,</strong> you are a baby. 
+          </p>
+          <pre>
+            Our JS looks like
+
+            $(document).ready(function() {
+              $("button#example").click(function() {
+                var age = parseInt(prompt("Enter your age, human."));
+
+                if (age >= 21) {
+                  $(".show21").show();
+                } else {
+                  $(".show20").show();
+                }
+              });
+            });
+            --------------------------------------------
+            Our CSS looks like
+
+            .show21, .show20 {
+              display: none;
+              font-size: 300%;
+            }
+          </pre>
         </div>
       </div><!--row-->
     </div><!--container-->

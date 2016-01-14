@@ -53,21 +53,56 @@
         </div><!--col-sm-3-->
         <div class="col-sm-9">
           <h3>Using JQuery with Forms</h3>
-            <p>An HTML form is used to collect user input. Then we can use jQuery to target and manipulate the data</p>
-            <div class="form-group form-inline">
-              <label for="name">Enter your name</label>
-              <input id="name" class="form-control" type="text">
-            </div><!--form-->
-            <div class="form-group form-inline">
-              <label for="name2">Enter your partner's name</label>
-              <input id="name2" class="form-control" type="text">
-              <button type="submit" class="btn btn-sm btn-primary">Submit</button>
-            </div><!--form-->
-            <div id="story">
-              <h3>A story about <span class="name"></span></h3>
-              <p>One day, <span class="name"></span> and <span class="name2"></span> were walking through the woods, when suddenly a XL pizza appeared. <span class="name"></span> and <span class="name2"></span> were very happy that day. The End.</p>
+            <p>HTML forms are used to collect user input. HTML forms contain form elements. Form elements are different types of input elements, checkboxes, radio buttons, submit buttons, and more. The <\input> element is the most important form element. The <\input> element has many variations, depending on the type attribute. To see more about this visit <a href="http://www.w3schools.com/html/html_forms.asp">HTML Forms W3 Schools</a></p>
+            <p>Once again, an HTML form is used to collect user input. Then we can use jQuery to target and manipulate the data</p>
+            <div id="blanks">
+              <form>
+                <div class="form-group form-inline">
+                  <label for="name">Enter your name</label>
+                  <input id="name" class="form-control" type="text">
+                </div><!--form-->
+                <div class="form-group form-inline">
+                  <label for="name2">Enter your partner's name</label>
+                  <input id="name2" class="form-control" type="text">
+                  <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                </div><!--form-->
+              </form>
             </div>
+            <hr>
+              <div id="story">
+                <h3>A Magical Story about <span class="name"></span> and <span class="name2"></span></h3>
+                <p>One day, <span class="name"></span> and <span class="name2"></span> were walking through the woods, when suddenly a XL pizza appeared. <span class="name"></span> and <span class="name2"></span> were very happy that day. The End.</p>
+              </div>
+            <hr>
 
+            <p>How does this work? Good question! Lets look at the code below:</p>
+            <hr>
+              <code class="prettyprint lang-javascript prettyprinted">
+                <span>$(document).ready(function() {</span>
+                <br>
+                <span>&nbsp;&nbsp;$("#blanks form").submit(function(event) {</span>
+                  <br>
+                <span>&nbsp;&nbsp;&nbsp;var blanks = ["name", "name2"];</span>
+                  <br>
+                  <br>
+                <span>&nbsp;&nbsp;blanks.forEach(function(blank) {</span>
+                  <br>
+                <span>&nbsp;&nbsp;&nbsp;var userInput = $("input#" + blank).val();</span>
+                  <br>
+                <span>&nbsp;&nbsp;&nbsp;$("." + blank).text(userInput);</span>
+                  <br>
+                <span>});</span>
+                  <br>
+                  <br>
+                <span>&nbsp;&nbsp;$("#story").show();</span>
+                  <br>
+                <span>&nbsp;&nbsp;event.preventDefault();</span>
+                  <br>
+                <span>&nbsp;});</span>
+                  <br>
+                <span>});</span>
+              </code>
+              <hr>
         </div><!--col-->
       </div><!--row-->
     </div><!--container-->

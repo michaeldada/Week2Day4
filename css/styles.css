@@ -2,3 +2,13 @@
 #story {
   display: none;
 }
+
+.blueFont {
+  color: blue;
+}
+
+.show21, .show20 {
+  display: none;
+  font-size: 300%;
+
+}
